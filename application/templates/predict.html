@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="d-flex h1">Prediction
+    <span class="h1-border-1"></span>
+    <span class="h1-border-2"></span>
+</h1>
+<div class="Prediction">
+    <form action="" method="post" id="form">
+        {% for col in column %}
+        <input name="{{col}}" placeholder=" {{col}}">
+        {% endfor %}
+        <br><br>
+        <input class="btn btn-primary" type="submit" value="Predict">
+    </form><br><br>
+<span class="span" >This Prediction section is only workable with purely Number based dataset </span>
+</div>
+
+{% if pred==[] %}
+{% else %}
+<div class="result">
+    {% for x in pred %}
+    <span class="span">{{x}}</span><br>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
