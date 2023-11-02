@@ -52,7 +52,7 @@ def datacollect(url,page,index):
                 except:
                     print("Mismatched columns",td)
     
-    df.to_csv(f"application\datafiles\collectedData{index}.csv")
+    df.to_csv(f"application/datafiles/collectedData{index}.csv")
     return df,title
 
 
@@ -62,20 +62,20 @@ def calldata(name):
     filename=name.split(".")
     print(name)
     if name=="sampledata.csv":
-        df=pd.read_csv(f"application\datafiles\{name}")
+        df=pd.read_csv(f"application/datafiles/{name}")
     
     elif( filename[-1]=="csv"):
         print(name[:9])
         if name[:9]=="collected":
-            df=pd.read_csv(f"application\datafiles\{name}")
+            df=pd.read_csv(f"application/datafiles/{name}")
         else:
-            df=pd.read_csv(f"application\datafiles\ {name}")
+            df=pd.read_csv(f"application/datafiles/ {name}")
 
     elif filename[-1]=="xlsx":
-        df=pd.read_excel(f"application\datafiles\ {name}")
+        df=pd.read_excel(f"application/datafiles/ {name}")
 
     elif filename[-1]=="xls":
-        df=pd.read_excel(f"application\datafiles\ {name}")
+        df=pd.read_excel(f"application/datafiles/ {name}")
     
     
 
